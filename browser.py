@@ -1,68 +1,40 @@
-# Here we will try to launch a browser with a specified URL 
-import webbrowser, time, pyautogui
-import random
-import requests
+# Here we will make a program to search some random things on bing, with one click. 
+# We are importing all the Modules we need to make this work
+import webbrowser, time, pyautogui, random, requests
 
-# # Here we pass the link to open in a variable
-# query = "python"
+# Start of our Search Function 
+def searchAuto():
+    '''This is a function to perform random search queries in Microsoft Bing in order to earn the Daily Search Points! It works!'''
 
-# # Here is the URL after adding the query 
-# finalUrl = ("https://www.bing.com/search?q=" + query)
-
-
-
-# # Since, Edge is my default browser, it is opening EDGE
-# webbrowser.open(finalUrl)
-# time.sleep(4)
-# pyautogui.hotkey("ctrl","w")
-
-# print("Job done!")
-
-# A function to get random words, got from internet
-
-
-def get_list_of_words():
+# Sending a HTTP request to get a big list of random words 
     response = requests.get(
         'https://www.mit.edu/~ecprice/wordlist.10000',
         timeout=10
     )
-
-    string_of_words = response.content.decode('utf-8')
-
-    words = string_of_words.splitlines()
-
-    # words = get_list_of_words()
-    # print(words)
-
+# Here we are decoding the response and storing it in a variable for further use 
+    randomWords = response.content.decode('utf-8')
+# Getting a list of all the words without spaces basically 
+    words = randomWords.splitlines()
+# Choosing a random word from the list every time
     random_word = random.choice(words)
-    print(random_word)  # 👉️ zoo
-
+# Forming the URL to search in Bing with the random word
     url = ("https://www.bing.com/search?q=" + random_word)
-
+# Using the Web Browser Module, performing the searches
     webbrowser.open(url)
+# After the set amount of time, the next line will be executed, and browser window will be closed
     time.sleep(3)
+# Finally, once the search is done and Points have been credited, we will close the browser window with this next line 
     pyautogui.hotkey("ctrl","w")
+# End of our Search Function 
 
-
-# Now we have to make the searching part in a Function 
-
-# def search():
-#     # query = "random things here"
-#     url = ("https://www.bing.com/search?q=" + random_word)
-
-#     webbrowser.open(url)
-#     time.sleep(3)
-#     pyautogui.hotkey("ctrl","w")
-
-#     print(url)
-
-for _ in range(3):
-    get_list_of_words()
-    # search()
+# Finally calling the function to do x number of times to collect the daily points. 
+# We just change the value of range to perform that many searches! Boom!
+for _ in range(3): #Note we use '_' character instead of 'i' when we dont care about the value for 'i'
+    searchAuto()
+    
+# Just a line of command to see the DocString for the search() function we created. 
+# print(searchAuto.__doc__)
     
 
 
 
-# Next we need to make a List of search terms to Loop through 
-
-# With every iteration of the Loop, the value will be stored and passed to the search function
