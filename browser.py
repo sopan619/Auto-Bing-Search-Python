@@ -21,16 +21,19 @@ def searchAuto():
     url = ("https://www.bing.com/search?q=" + random_word)
 # Using the Web Browser Module, performing the searches
     webbrowser.open(url)
-# After the set amount of time, the next line will be executed, and browser window will be closed
-    time.sleep(3)
+# After the set amount of time, the next line will be executed, and browser window will be closed. You can the number as you like.
+    time.sleep(4)
 # Finally, once the search is done and Points have been credited, we will close the browser window with this next line 
     pyautogui.hotkey("ctrl","w")
 # End of our Search Function 
 
-# Finally calling the function to do x number of times to collect the daily points. 
-# We just change the value of range to perform that many searches! Boom!
-for _ in range(3): #Note we use '_' character instead of 'i' when we dont care about the value for 'i'
+# Finally calling the function to run x number of times to collect the daily points. 
+# We just change the value of range to perform that many searches! If you want to make 30 searches, just change the range to 30. Boom done!
+#Note we use '_' character instead of 'i' when we dont care about the value for 'i'
+for i in range(3): 
     searchAuto()
+# This will indicate how many searches done, in the Terminal for reference.
+    print("Search number :",i,"done!")
     
 # Just a line of command to see the DocString for the search() function we created. 
 # print(searchAuto.__doc__)
