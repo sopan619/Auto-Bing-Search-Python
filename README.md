@@ -28,6 +28,7 @@ python broswer.py
 ## Changes 29th June'23
 + Now the program will ask for the number of searches you wish to perform before executing. Simply enter the value and start.
 + Added a random search delay between 3 to 12 seconds, you can change it by editing the code or just let it be. Did it in hopes to avoid ban! Not sure if it will help.
++ It just shows the time taken to complete all searches on terminal in the end. Enjoy!
 
 ## Notes
 * Make sure to set **Microsoft Edge as your Default Browser**. Else it will open in Chrome or whichever is your Default Browser.

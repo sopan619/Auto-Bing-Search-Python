@@ -1,6 +1,6 @@
 # Here we will make a program to search some random things on bing, with one click. 
 # We are importing all the Modules we need to make this work
-import webbrowser, time, pyautogui, random, requests
+import webbrowser, time, pyautogui, random, requests, time
 
 # Start of our Search Function 
 def searchAuto():
@@ -31,17 +31,24 @@ def searchAuto():
     pyautogui.hotkey("ctrl","w")
 # End of our Search Function 
 
+# Starting to capture the time
+st = time.time()
 # Finally calling the function to run x number of times to collect the daily points. 
 # We just change the value of range to perform that many searches! If you want to make 30 searches, just change the range to 30. Boom done!
 #Note we use '_' character instead of 'i' when we dont care about the value for 'i'
-
 #Adding an input prompt to set the number of searches before running the program
 num = int(input("How many searches you want to perform? : "))
 for i in range(num): 
     searchAuto()
 # This will indicate how many searches done, in the Terminal for reference.
     print("Search number :",i,"done!")
-    
+
+# Stopping time capture to show how long it took to perform all the searches 
+ed = time.time()
+
+# Showing the time after calculation on terminal
+print(f"That took {round(ed-st)} seconds ")
+
 # Just a line of command to see the DocString for the search() function we created. 
 # print(searchAuto.__doc__)
     
