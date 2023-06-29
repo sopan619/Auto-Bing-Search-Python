@@ -30,7 +30,10 @@ def searchAuto():
 # Finally calling the function to run x number of times to collect the daily points. 
 # We just change the value of range to perform that many searches! If you want to make 30 searches, just change the range to 30. Boom done!
 #Note we use '_' character instead of 'i' when we dont care about the value for 'i'
-for i in range(3): 
+
+#Adding an input prompt to set the number of searches before running the program
+num = int(input("How many searches you want to perform? : "))
+for i in range(num): 
     searchAuto()
 # This will indicate how many searches done, in the Terminal for reference.
     print("Search number :",i,"done!")

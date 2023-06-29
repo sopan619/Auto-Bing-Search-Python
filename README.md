@@ -25,6 +25,9 @@ You can open a Terminal at the file location, then run the following command,
 python broswer.py
 ```
 
+## Changes 29th June'23
++ Now the program will ask for the number of searches you wish to perform before executing. Simply enter the value and start.
+
 ## Notes
 * Make sure to set **Microsoft Edge as your Default Browser**. Else it will open in Chrome or whichever is your Default Browser.
 * If you use Chrome, then you must be logged in there with your Microsoft Account in order to earn the points.
@@ -34,6 +37,7 @@ python broswer.py
     time.sleep(3)
   ```
   Simply change the number of seconds you want the tab to be opened. Here it is set to 3 seconds, which works for me.
+* The next part is not necessary anymore, but for record I am leaving it here anyways.
 * To change the number of searches, you change the following line,
   ```python
   for _ in range(3): 
