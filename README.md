@@ -27,10 +27,12 @@ python broswer.py
 
 ## Changes 29th June'23
 + Now the program will ask for the number of searches you wish to perform before executing. Simply enter the value and start.
++ Added a random search delay between 3 to 12 seconds, you can change it by editing the code or just let it be. Did it in hopes to avoid ban! Not sure if it will help.
 
 ## Notes
 * Make sure to set **Microsoft Edge as your Default Browser**. Else it will open in Chrome or whichever is your Default Browser.
 * If you use Chrome, then you must be logged in there with your Microsoft Account in order to earn the points.
+* Note, the next part has been changed to generate a random delay every time, you change it by commenting out the random function and add your own delay number as shown below.
 * You can set/change the amount of time a tab is kept opened by changing the following line in the code file,
   ```python 
   # After the set amount of time, the next line will be executed, and browser window will be closed

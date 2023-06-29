@@ -22,7 +22,11 @@ def searchAuto():
 # Using the Web Browser Module, performing the searches
     webbrowser.open(url)
 # After the set amount of time, the next line will be executed, and browser window will be closed. You can the number as you like.
-    time.sleep(4)
+# Making a change and adding a new feature suggested by a friend. Now it will perform searches at random intervals between set value.
+# It is not necessary but might be useful to avoid getting banned? Not sure, seemed like fun so here it is.
+    randomVal = random.randint(3,12) 
+# It will return a random number every time, between 3 and 12, and it will be read as seconds to wait before doing next search
+    time.sleep(randomVal)
 # Finally, once the search is done and Points have been credited, we will close the browser window with this next line 
     pyautogui.hotkey("ctrl","w")
 # End of our Search Function 
